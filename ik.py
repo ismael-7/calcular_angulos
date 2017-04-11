@@ -2,8 +2,8 @@
 from math import *
 l1=1
 l2=1
-x=1.414213
-y=0.0
+x=1.4142
+y=0
 r2=pow(x,2)+pow(y,2)
 aux=r2-pow(l1,2)-pow(l2,2)
 cosBeta=-aux/(float) (2*l1*l2)
@@ -14,7 +14,11 @@ if cosBeta!=0:
     beta=atan(senoBeta/cosBeta)
 else:
     beta=asin(senoBeta)
-beta=pi+beta
+
+if y<=pi/2:
+ beta=pi+beta
+else:
+  beta = pi - beta
 
 aux= -pow(l2,2)+pow(l1,2)+r2
 cosAlpha=aux/(2*l1*sqrt(r2))
